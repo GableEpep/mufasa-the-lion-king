@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Legend of Mufasa - The Lion King</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a2e0a;
+            color: #f5f5dc;
+            background-image: url('https://images.unsplash.com/photo-1542273917363-3b1817f1a2ec?q=80&w=1000');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to bottom, rgba(10, 46, 10, 0.9), rgba(5, 25, 5, 0.7));
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 3px solid #d4a017;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #d4a017;
+            text-shadow: 2px 2px 4px #000;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #f5f5dc;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: rgba(20, 60, 20, 0.9);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: #f5f5dc;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        nav a:hover {
+            color: #d4a017;
+            background-color: rgba(212, 160, 23, 0.2);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .story-section {
+            background-color: rgba(10, 46, 10, 0.85);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid #d4a017;
+        }
+        
+        h2 {
+            color: #d4a017;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid #d4a017;
+            padding-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #d4a017;
+            border-left: 3px solid #d4a017;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .translation-box {
+            background-color: rgba(20, 60, 20, 0.7);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 3px solid #d4a017;
+        }
+        
+        .translation-title {
+            color: #d4a017;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Character Section */
+        .character-card {
+            display: flex;
+            background-color: rgba(20, 60, 20, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .character-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .character-info {
+            flex: 2;
+            padding: 2rem;
+        }
+        
+        .character-info h3 {
+            color: #d4a017;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            height: 200px;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to top, rgba(10, 46, 10, 0.9), rgba(5, 25, 5, 0.7));
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 3px solid #d4a017;
+        }
+        
+        footer p {
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .character-card {
+                flex-direction: column;
+            }
+            
+            .character-image {
+                min-width: 100%;
+                height: 300px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Legend of MUFASA</h1>
+        <p class="subtitle">A Tale of Courage, Legacy, and the Circle of Life</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#story">The Story</a></li>
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#quotes">Wisdom</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="story" class="story-section">
+            <h2>The Lion King's Tale</h2>
+            
+            <p>Once upon a time, in the middle of a vast savannah shining under the golden sun, there lived a little lion cub named Simba. Simba was no ordinary lion cub; he was a prince, destined to be king one day.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Pada suatu waktu, di tengah padang savana yang luas yang bersinar di bawah matahari keemasan, hiduplah seekor anak singa kecil bernama Simba. Simba bukan anak singa biasa; dia adalah seorang pangeran, ditakdirkan untuk menjadi raja suatu hari nanti.</p>
+            </div>
+            
+            <p>His father, Mufasa, a mighty lion with a mane like a crown, ruled the land with wisdom and kindness. He teaches Simba about the Circle of Life, a beautiful way to explain how everything in the world is connected. Just as the sun sets to make way for the moon and grass feeds the zebra, everything has its place and purpose.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Ayahnya, Mufasa, singa perkasa dengan surai seperti mahkota, memerintah negeri dengan kebijaksanaan dan kebaikan. Dia mengajarkan Simba tentang Lingkaran Kehidupan, cara yang indah untuk menjelaskan bagaimana segala sesuatu di dunia saling terhubung. Seperti halnya matahari terbenam untuk memberi jalan bagi bulan dan rumput memberi makan zebra, segala sesuatu memiliki tempat dan tujuannya.</p>
+            </div>
+            
+            <p>Simba's best friend is Nala, a playful little lioness with fur as red as the sunset. Together, they roam the savanna, chase butterflies, and pounce on imaginary enemies. They were inseparable, two little adventurers who were facing the whole world in front of them.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Sahabat terbaik Simba adalah Nala, seekor singa betina kecil yang lincah dengan bulu semerah matahari terbenam. Bersama-sama, mereka menjelajahi savana, mengejar kupu-kupu, dan menerkam musuh-musuh imajiner. Mereka tak terpisahkan, dua petualang kecil yang menghadapi seluruh dunia di depan mereka.</p>
+            </div>
+            
+            <div class="quote">
+                "Everything you see exists together in a delicate balance. As king, you need to understand that balance and respect all the creatures." - Mufasa
+            </div>
+            
+            <p>One day, Simba's cunning uncle, Scar, a cunning lion with a dark mane, decides he wants to be king in Simba's place. He tricks Simba and his father into getting involved in a dangerous deer stampede. Mufasa, who tries to save Simba, gets caught in the stampede and dies tragically.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Suatu hari, paman Simba yang licik, Scar, seekor singa dengan surai gelap, memutuskan ingin menjadi raja menggantikan Simba. Dia menipu Simba dan ayahnya untuk terlibat dalam kerumunan rusa yang berbahaya. Mufasa, yang berusaha menyelamatkan Simba, terjebak dalam kerumunan itu dan mati secara tragis.</p>
+            </div>
+            
+            <p>Simba is very sad and scared. He runs away from the Pride Lands, his home, because he feels alone. He stumbles into a dense jungle, far from everything he knows. There, he is found by Timon and Pumbaa, a meerkat and a warthog who live by the motto "Hakuna Matata" – don't worry!</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Simba sangat sedih dan takut. Dia melarikan diri dari Pride Lands, rumahnya, karena merasa sendirian. Dia tersandung ke hutan lebat, jauh dari semua yang dia kenal. Di sana, dia ditemukan oleh Timon dan Pumbaa, seekor meerkat dan babi hutan yang hidup dengan moto "Hakuna Matata" - jangan khawatir!</p>
+            </div>
+            
+            <p>Years passed, and Simba grew into a handsome young lion. One day, while chasing a clever insect named Rafiki, a wise mandrill who is a royal advisor, Simba meets Nala, who has now become a beautiful lioness. Nala, surprised to see Simba, is happy but also worried.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Tahun-tahun berlalu, dan Simba tumbuh menjadi singa muda yang tampan. Suatu hari, saat mengejar serangga pintar bernama Rafiki, seekor mandrill bijak yang merupakan penasihat kerajaan, Simba bertemu Nala, yang kini telah menjadi singa betina yang cantik. Nala, terkejut melihat Simba, bahagia tetapi juga khawatir.</p>
+            </div>
+            
+            <p>Nala pleads with Simba to return and become the true king. Simba, who is hesitant at first, remembers the things his father taught him and the pride he feels as Mufasa's son. He realizes that he cannot ignore his responsibilities and allow Scar to continue destroying the Pride Lands.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Nala memohon kepada Simba untuk kembali dan menjadi raja yang sebenarnya. Simba, yang awalnya ragu-ragu, mengingat hal-hal yang diajarkan ayahnya dan kebanggaan yang dia rasakan sebagai putra Mufasa. Dia menyadari bahwa dia tidak bisa mengabaikan tanggung jawabnya dan membiarkan Scar terus menghancurkan Pride Lands.</p>
+            </div>
+            
+            <p>With new courage and Nala by his side, Simba returns home. He meets Rafiki, who reminds him of his true identity – the future king. Rafiki also shows Simba his reflection in the water, where he sees his father's eyes staring back.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Dengan keberanian baru dan Nala di sisinya, Simba kembali ke rumah. Dia bertemu Rafiki, yang mengingatkannya pada identitas sejatinya – raja masa depan. Rafiki juga menunjukkan Simba bayangannya di air, di mana dia melihat mata ayahnya menatap kembali.</p>
+            </div>
+            
+            <div class="quote">
+                "Remember who you are. You are my son, and the one true king. Remember who you are." - Mufasa's spirit
+            </div>
+            
+            <p>Simba returns with a roar, challenging Scar for the throne. A great battle ensues, Simba recalls his training and fights with the courage of a true king. Scar, weakened by his years of laziness, is finally defeated.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Simba kembali dengan raungan, menantang Scar untuk tahta. Pertempuran besar terjadi, Simba mengingat pelatihannya dan bertarung dengan keberanian raja sejati. Scar, yang melemah karena bertahun-tahun kemalasan, akhirnya dikalahkan.</p>
+            </div>
+            
+            <p>Simba becomes a wise and just king, like his father. So, the little lion cub who had run away scared and alone, returned as a strong and responsible leader. He had learned that facing fear, respecting family, and understanding the Circle of Life were the true signs of a king.</p>
+            
+            <div class="translation-box">
+                <div class="translation-title">Indonesian Translation:</div>
+                <p>Simba menjadi raja yang bijaksana dan adil, seperti ayahnya. Jadi, anak singa kecil yang melarikan diri ketakutan dan sendirian, kembali sebagai pemimpin yang kuat dan bertanggung jawab. Dia telah belajar bahwa menghadapi ketakutan, menghormati keluarga, dan memahami Lingkaran Kehidupan adalah tanda sejati seorang raja.</p>
+            </div>
+        </section>
+        
+        <section id="characters" class="story-section">
+            <h2>Main Characters</h2>
+            
+            <div class="character-card">
+                <div class="character-image">
+                    <img src="https://i.pinimg.com/originals/7a/05/2e/7a052e8d9a2f5c0a7e4d4a8e4a4e4b4e.jpg" alt="Mufasa">
+                </div>
+                <div class="character-info">
+                    <h3>Mufasa</h3>
+                    <p>The wise and powerful king of Pride Rock. Mufasa rules with strength and compassion, teaching his son Simba about the responsibilities of kingship and the delicate balance of all living things.</p>
+                    <p><strong>Indonesian:</strong> Raja yang bijaksana dan perkasa dari Pride Rock. Mufasa memerintah dengan kekuatan dan kasih sayang, mengajari putranya Simba tentang tanggung jawab kerajaan dan keseimbangan rapuh semua makhluk hidup.</p>
+                </div>
+            </div>
+            
+            <div class="character-card">
+                <div class="character-image">
+                    <img src="https://i.pinimg.com/originals/9b/3a/2a/9b3a2a0e4e4b4e4a4e4a4e4a4e4a4e4.jpg" alt="Simba">
+                </div>
+                <div class="character-info">
+                    <h3>Simba</h3>
+                    <p>The curious and adventurous lion prince who must overcome tragedy and self-doubt to claim his rightful place as king.</p>
+                    <p><strong>Indonesian:</strong> Pangeran singa yang penuh rasa ingin tahu dan petualangan yang harus mengatasi tragedi dan keraguan diri untuk mengklaim tempatnya yang sah sebagai raja.</p>
+                </div>
+            </div>
+            
+            <div class="character-card">
+                <div class="character-image">
+                    <img src="https://i.pinimg.com/originals/8a/05/2e/8a052e8d9a2f5c0a7e4d4a8e4a4e4b4e.jpg" alt="Scar">
+                </div>
+                <div class="character-info">
+                    <h3>Scar</h3>
+                    <p>Mufasa's jealous younger brother who orchestrates the king's death and takes over Pride Rock, leading it to ruin with his selfish rule.</p>
+                    <p><strong>Indonesian:</strong> Adik Mufasa yang iri hati yang merencanakan kematian raja dan mengambil alih Pride Rock, membawanya ke kehancuran dengan pemerintahan yang egois.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery" class="story-section">
+            <h2>Pride Lands Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pride Rock">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="African Savanna">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Lion Family">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Elephant Graveyard">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jungle Oasis">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sunset Over Savannah">
+                </div>
+            </div>
+        </section>
+        
+        <section id="quotes" class="story-section">
+            <h2>Wisdom of Mufasa</h2>
+            
+            <div class="quote">
+                "Look inside yourself, Simba. You are more than what you have become. You must take your place in the Circle of Life."
+                <div class="translation-title">Indonesian:</div>
+                "Lihat ke dalam dirimu, Simba. Kamu lebih dari apa yang telah kamu menjadi. Kamu harus mengambil tempatmu dalam Lingkaran Kehidupan."
+            </div>
+            
+            <div class="quote">
+                "While others search for what they can take, a true king searches for what he can give."
+                <div class="translation-title">Indonesian:</div>
+                "Sementara yang lain mencari apa yang bisa mereka ambil, seorang raja sejati mencari apa yang bisa dia berikan."
+            </div>
+            
+            <div class="quote">
+                "The past can hurt. But the way I see it, you can either run from it, or learn from it."
+                <div class="translation-title">Indonesian:</div>
+                "Masa lalu bisa menyakitkan. Tapi menurutku, kamu bisa lari darinya, atau belajar darinya."
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 The Legend of Mufasa | Disney's The Lion King</p>
+        <p>Created for educational purposes and appreciation of this timeless story</p>
+    </footer>
+</body>
+</html>
